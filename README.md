@@ -172,6 +172,21 @@ I usually hedge my bets and am willing to trade some manual effort for a sure
 result.
 
 
+## Bisecting
+
+https://llvm.org/docs/GitBisecting.html
+
+With your `-gen-reproducer` in hand, bisecting can be pretty easy, since your
+script is almost complete. I'd run it manually a few times to make sure things
+are working as intended, and you're doing the necessary `grep` commands for the
+assertion or error message you have.
+
+This can be much harder if you need to run a testcase that doesn't happen on
+the host hardware (e.g. a bug in Aarch64 codegen, but you run on an x86_64
+system). Its almost always worth spending the effort to pinpoint what's wrong
+w/ the codegen first and then bisect.
+
+
 ## Other resources
 
 - [How to reduce LLVM crashes](https://www.npopov.com/2023/10/22/How-to-reduce-LLVM-crashes.html)
