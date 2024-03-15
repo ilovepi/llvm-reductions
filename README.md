@@ -114,7 +114,7 @@ If you're starting w/ `-gen-reproducer` output, I use the following procedure.
 1. Save the CC1 command in a variable. Sometimes I format it so that each line
    has its own option. This is typically the regex I use to do this in `vim`:
    `s/ "-/ \\\r\t"-/g`. It just splits lines on options w/ `-`, and adds some
-   indentation. It also adds the trailing `/`, so its a valid command.
+   indentation. It also adds the trailing `\`, so its a valid command.
 
 2. Figure out how to detect the error. If its an assertion failure, things are
    easy, and you can just take the output from `-gen-reproducer` and give it to
